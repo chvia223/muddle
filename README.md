@@ -1,2 +1,2 @@
 # muddle
-World clone for SwiftUI
+Wordle clone for SwiftUI
