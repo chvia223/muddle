@@ -11,6 +11,8 @@
 		B263D3372834102000123733 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263D3362834102000123733 /* ContentView.swift */; };
 		B263D3392834102100123733 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B263D3382834102100123733 /* Assets.xcassets */; };
 		B263D33C2834102100123733 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B263D33B2834102100123733 /* Preview Assets.xcassets */; };
+		B263D3432834273900123733 /* LetterBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263D3422834273900123733 /* LetterBox.swift */; };
+		B263D3452834278D00123733 /* WordRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263D3442834278D00123733 /* WordRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		B263D3362834102000123733 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B263D3382834102100123733 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B263D33B2834102100123733 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B263D3422834273900123733 /* LetterBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterBox.swift; sourceTree = "<group>"; };
+		B263D3442834278D00123733 /* WordRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				B263D3342834102000123733 /* MuddleUIApp.swift */,
 				B263D3362834102000123733 /* ContentView.swift */,
+				B263D3422834273900123733 /* LetterBox.swift */,
+				B263D3442834278D00123733 /* WordRow.swift */,
 				B263D3382834102100123733 /* Assets.xcassets */,
 				B263D33A2834102100123733 /* Preview Content */,
 			);
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B263D3452834278D00123733 /* WordRow.swift in Sources */,
 				B263D3372834102000123733 /* ContentView.swift in Sources */,
 				B263D3352834102000123733 /* MuddleUIApp.swift in Sources */,
+				B263D3432834273900123733 /* LetterBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

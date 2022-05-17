@@ -7,10 +7,63 @@
 
 import SwiftUI
 
+struct Word {
+    var Elements = [LetterBox]()
+}
+
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            HStack {
+                LetterBox(letter: "b", color: .red)
+                LetterBox()
+                LetterBox()
+                LetterBox()
+                LetterBox()
+            }
+            
+            HStack {
+                LetterBox()
+                LetterBox()
+                LetterBox()
+                LetterBox()
+                LetterBox()
+            }
+            
+            HStack {
+                LetterBox()
+                LetterBox()
+                LetterBox()
+                LetterBox()
+                LetterBox()
+            }
+            
+            HStack {
+                LetterBox()
+                LetterBox()
+                LetterBox()
+                LetterBox()
+                LetterBox()
+            }
+            
+            HStack {
+                LetterBox()
+                LetterBox()
+                LetterBox()
+                LetterBox()
+                LetterBox()
+            }
+            
+            HStack {
+                LetterBox()
+                LetterBox()
+                LetterBox()
+                LetterBox()
+                LetterBox()
+            }
+        }
+        .padding()
+        
     }
 }
 
