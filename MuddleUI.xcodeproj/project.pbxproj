@@ -12,7 +12,8 @@
 		B263D3392834102100123733 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B263D3382834102100123733 /* Assets.xcassets */; };
 		B263D33C2834102100123733 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B263D33B2834102100123733 /* Preview Assets.xcassets */; };
 		B263D3432834273900123733 /* LetterBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263D3422834273900123733 /* LetterBox.swift */; };
-		B263D3452834278D00123733 /* WordRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263D3442834278D00123733 /* WordRow.swift */; };
+		B263D3472837F91C00123733 /* BoardDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263D3462837F91C00123733 /* BoardDataModel.swift */; };
+		B263D34B2837FC8C00123733 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263D34A2837FC8C00123733 /* GameState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +23,8 @@
 		B263D3382834102100123733 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B263D33B2834102100123733 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B263D3422834273900123733 /* LetterBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterBox.swift; sourceTree = "<group>"; };
-		B263D3442834278D00123733 /* WordRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordRow.swift; sourceTree = "<group>"; };
+		B263D3462837F91C00123733 /* BoardDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardDataModel.swift; sourceTree = "<group>"; };
+		B263D34A2837FC8C00123733 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,7 @@
 				B263D3342834102000123733 /* MuddleUIApp.swift */,
 				B263D3362834102000123733 /* ContentView.swift */,
 				B263D3422834273900123733 /* LetterBox.swift */,
-				B263D3442834278D00123733 /* WordRow.swift */,
+				B263D34C2838089D00123733 /* ModelData */,
 				B263D3382834102100123733 /* Assets.xcassets */,
 				B263D33A2834102100123733 /* Preview Content */,
 			);
@@ -71,6 +73,15 @@
 				B263D33B2834102100123733 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B263D34C2838089D00123733 /* ModelData */ = {
+			isa = PBXGroup;
+			children = (
+				B263D34A2837FC8C00123733 /* GameState.swift */,
+				B263D3462837F91C00123733 /* BoardDataModel.swift */,
+			);
+			path = ModelData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,8 +154,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B263D3452834278D00123733 /* WordRow.swift in Sources */,
+				B263D3472837F91C00123733 /* BoardDataModel.swift in Sources */,
 				B263D3372834102000123733 /* ContentView.swift in Sources */,
+				B263D34B2837FC8C00123733 /* GameState.swift in Sources */,
 				B263D3352834102000123733 /* MuddleUIApp.swift in Sources */,
 				B263D3432834273900123733 /* LetterBox.swift in Sources */,
 			);
