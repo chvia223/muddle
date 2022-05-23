@@ -8,21 +8,8 @@
 import SwiftUI
 
 struct LetterBox: View {
-    @State var boxColor: Color = .green
-    @State var displayedLetter: String = ""
-    
-    init (letter: String, color: Color) {
-        boxColor = color
-        displayedLetter = letter
-    }
-    
-    init () {
-
-    }
-    
-    func setLetter (letter: String) {
-        displayedLetter = letter
-    }
+    var displayedLetter: String
+    var boxColor: Color
     
     var body: some View {
         Rectangle()
@@ -40,6 +27,6 @@ struct LetterBox: View {
 
 struct LetterBox_Previews: PreviewProvider {
     static var previews: some View {
-        LetterBox(letter: "b", color: .red)
+        LetterBox(displayedLetter: "a", boxColor: .gray)
     }
 }
