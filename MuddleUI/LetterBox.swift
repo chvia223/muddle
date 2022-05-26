@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct LetterBox: View {
-    var displayedLetter: String
-    var boxColor: Color
+    let displayedLetter: String
+    let boxColor: Color
     
     var body: some View {
         Rectangle()
