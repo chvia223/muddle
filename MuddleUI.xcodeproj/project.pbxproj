@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B23129FA283C279A00E25570 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23129F9283C279A00E25570 /* KeyboardView.swift */; };
 		B263D3352834102000123733 /* MuddleUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263D3342834102000123733 /* MuddleUIApp.swift */; };
 		B263D3372834102000123733 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263D3362834102000123733 /* ContentView.swift */; };
 		B263D3392834102100123733 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B263D3382834102100123733 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B23129F9283C279A00E25570 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		B263D3312834102000123733 /* MuddleUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuddleUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B263D3342834102000123733 /* MuddleUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuddleUIApp.swift; sourceTree = "<group>"; };
 		B263D3362834102000123733 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				B263D3342834102000123733 /* MuddleUIApp.swift */,
 				B263D3362834102000123733 /* ContentView.swift */,
 				B263D3422834273900123733 /* LetterBox.swift */,
+				B23129F9283C279A00E25570 /* KeyboardView.swift */,
 				B263D34C2838089D00123733 /* ModelData */,
 				B263D3382834102100123733 /* Assets.xcassets */,
 				B263D33A2834102100123733 /* Preview Content */,
@@ -157,6 +160,7 @@
 				B263D3472837F91C00123733 /* BoardDataModel.swift in Sources */,
 				B263D3372834102000123733 /* ContentView.swift in Sources */,
 				B263D34B2837FC8C00123733 /* GameState.swift in Sources */,
+				B23129FA283C279A00E25570 /* KeyboardView.swift in Sources */,
 				B263D3352834102000123733 /* MuddleUIApp.swift in Sources */,
 				B263D3432834273900123733 /* LetterBox.swift in Sources */,
 			);
@@ -287,6 +291,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MuddleUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 47W34PPBTP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -315,6 +320,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MuddleUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 47W34PPBTP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
