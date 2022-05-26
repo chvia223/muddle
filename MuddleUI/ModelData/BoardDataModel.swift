@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class GameBoard: ObservableObject {
+struct GameBoard {
     struct LetterThing: Codable, Hashable {
         var letter: String = ""
         var state = LetterState.unknown
@@ -17,7 +17,7 @@ class GameBoard: ObservableObject {
     var winningWord: String = "apple"
     
 
-    @Published var board: [[LetterThing]] = {
+    var board: [[LetterThing]] = {
         var rows = [[LetterThing]]()
         for _ in 0..<6 {
             var columns = [LetterThing]()
@@ -60,10 +60,12 @@ class GameBoard: ObservableObject {
 func modifyGuessOnBoard(gameBoard: GameBoard, newLetter: String) -> GameBoard {
     let availableIndex = gameBoard.nextOpenIndex()
     
-    gameBoard.board[availableIndex.0][availableIndex.1].letter = newLetter
-    gameBoard.board[availableIndex.0][availableIndex.1].state = .unconfirmedGuess
+    var copy = gameBoard
     
-    return gameBoard
+    copy.board[availableIndex.0][availableIndex.1].letter = newLetter
+    copy.board[availableIndex.0][availableIndex.1].state = .unconfirmedGuess
+    
+    return copy
 }
 
 // Function needed as they delete.
@@ -74,20 +76,22 @@ func modifyBoardOnCommit(gameBoard: GameBoard) -> GameBoard {
 
 //test Function
 func testChangeLetterOnCommit(gameBoard: GameBoard) -> GameBoard {
-    gameBoard.board[0][0].letter = "t"
-    gameBoard.board[0][0].state = .rightLetterRightPlace
+    var copy = gameBoard
     
-    gameBoard.board[0][1].letter = "e"
-    gameBoard.board[0][1].state = .rightLetterWrongPlace
+    copy.board[0][0].letter = "t"
+    copy.board[0][0].state = .rightLetterRightPlace
     
-    gameBoard.board[0][2].letter = "s"
-    gameBoard.board[0][2].state = .wrongLetterWrongPlace
+    copy.board[0][1].letter = "e"
+    copy.board[0][1].state = .rightLetterWrongPlace
     
-    gameBoard.board[0][3].letter = "t"
-    gameBoard.board[0][3].state = .rightLetterWrongPlace
+    copy.board[0][2].letter = "s"
+    copy.board[0][2].state = .wrongLetterWrongPlace
+    
+    copy.board[0][3].letter = "t"
+    copy.board[0][3].state = .rightLetterWrongPlace
     
     
-    return gameBoard
+    return copy
 }
 
 enum LetterState: Codable {
