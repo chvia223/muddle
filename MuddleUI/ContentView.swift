@@ -29,17 +29,18 @@ struct ContentView: View {
                 }
                 .padding()
                 
+                Text(gameBoard.winMessage)
+                
                 KeyboardView() { key in
                     switch (key) {
                     case .enter:
-                        gameBoard = testChangeLetterOnCommit(gameBoard: gameBoard)
+                        gameBoard = commitGuess(gameBoard: gameBoard)
                         
                     case .delete:
-                        print("Pressed delete")
+                        gameBoard = deleteLetterFromGuess(gameBoard: gameBoard)
                         
                     case .letter(let keyLetter):
-                        print("Pressed \(keyLetter)")
-                        
+                        gameBoard = addLetterToGuess(gameBoard: gameBoard, newLetter: keyLetter)
                     }
                 }
                 .frame(width: screen.size.width, height: screen.size.height * 0.30)
