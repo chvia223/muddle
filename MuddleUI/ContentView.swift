@@ -44,6 +44,8 @@ struct ContentView: View {
                     }
                 }
                 .frame(width: screen.size.width, height: screen.size.height * 0.30)
+                
+                Spacer()
             }
         }
     }
