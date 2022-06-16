@@ -30,9 +30,12 @@ struct GameBoard {
         var state = LetterState.unknown
     }
     
-    var solution: [String] = parseSolution(word: "apple")
+    lazy var solution: [String] = parseSolution(word: selectWordOfDay())
     var winMessage: String = ""
     var currentGuess: Int = 0
+    var hasValidWord: Bool {
+        return AllWords.contains(guessToString())
+    }
     
 
     var board: [[LetterThing]] = {
@@ -87,6 +90,27 @@ struct GameBoard {
             }
         }
         return (currentGuess, 0)
+    }
+    
+    
+    
+    func guessToString() -> String {
+        var guess = ""
+        
+        for element in self.board[currentGuess] {
+            guess.append(element.letter.lowercased())
+        }
+        
+        return guess
+    }
+    
+    
+    
+    func selectWordOfDay() -> String {
+        let myWordIndex = Int(Date.timeIntervalSinceReferenceDate / (60 * 60 * 24)) % 2309
+        
+        print(GuessableWords[myWordIndex])
+        return GuessableWords[myWordIndex]
     }
 }
 
