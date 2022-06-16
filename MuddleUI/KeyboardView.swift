@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-// Keyboard array
 let row1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"]
 let row2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"]
 let row3 = [EnterString, "Z", "X", "C", "V", "B", "N", "M", DeleteString]
@@ -22,9 +21,8 @@ enum KeyboardKey {
 }
 
 
-// View for whole keyboard
+
 struct KeyboardView: View {
-    // Empty closure
     let onKeyPressed: (KeyboardKey) -> Void
     
     func keyPressed(_ content: String) {
@@ -38,23 +36,24 @@ struct KeyboardView: View {
         }
     }
     
+    
+    
     // Designed to find the correct sizing of each key using the available
     // geometry of the device.
     func keySize(_ keyboardWidth: CGFloat, content: String = "") -> CGFloat {
-        
-        // It was easier on my head to break this out into it's own variable
-        // for when we calculate the width of the Enter and Delete keys.
         let baseKeyWidth = (keyboardWidth - (CGFloat((row1.count - 1) * 10))) / CGFloat(row1.count)
         
         if (content == EnterString || content == DeleteString) {
             return (keyboardWidth - 80.0 - (baseKeyWidth * 7)) / 2
+            
         } else {
+            
             return baseKeyWidth
-
         }
     }
     
 
+    
     var body: some View {
         GeometryReader { keyboardBox in
             VStack {
@@ -105,18 +104,24 @@ struct KeyView: View {
                     .overlay {
                         Text(content)
                             .foregroundColor(.black)
+                            .font(.system(size: 20))
+                            .minimumScaleFactor(0.01)
                     }
                     .foregroundColor(.gray)
                     .cornerRadius(5)
+                    .padding(-1)
                 
             } else {
                 Rectangle()
                     .overlay {
                         Text(content)
                             .foregroundColor(.black)
+                            .font(.system(size: 25))
+                            .minimumScaleFactor(0.01)
                     }
                     .foregroundColor(.gray)
                     .cornerRadius(5)
+                    .padding(-1)
             }
         })
     }
