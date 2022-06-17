@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B218DEC32858250C008144C7 /* WordCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B218DEC22858250C008144C7 /* WordCache.swift */; };
 		B23129FA283C279A00E25570 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23129F9283C279A00E25570 /* KeyboardView.swift */; };
 		B263D3352834102000123733 /* MuddleUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263D3342834102000123733 /* MuddleUIApp.swift */; };
 		B263D3372834102000123733 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263D3362834102000123733 /* ContentView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B218DEC22858250C008144C7 /* WordCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCache.swift; sourceTree = "<group>"; };
 		B23129F9283C279A00E25570 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		B263D3312834102000123733 /* MuddleUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuddleUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B263D3342834102000123733 /* MuddleUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuddleUIApp.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				B263D34A2837FC8C00123733 /* GameState.swift */,
 				B263D3462837F91C00123733 /* BoardDataModel.swift */,
 				B29A5E5928401D0600B35EB1 /* BoardModifiers.swift */,
+				B218DEC22858250C008144C7 /* WordCache.swift */,
 			);
 			path = ModelData;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			files = (
 				B263D3472837F91C00123733 /* BoardDataModel.swift in Sources */,
 				B263D3372834102000123733 /* ContentView.swift in Sources */,
+				B218DEC32858250C008144C7 /* WordCache.swift in Sources */,
 				B263D34B2837FC8C00123733 /* GameState.swift in Sources */,
 				B23129FA283C279A00E25570 /* KeyboardView.swift in Sources */,
 				B29A5E5A28401D0600B35EB1 /* BoardModifiers.swift in Sources */,
