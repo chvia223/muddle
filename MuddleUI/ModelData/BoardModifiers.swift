@@ -94,7 +94,7 @@ func commitGuess(gameBoard: GameBoard) -> GameBoard {
     var solution = newBoard.solution
     let line = newBoard.currentGuess
     
-    if gameBoard.lastEnteredIndex().1 == 4 {
+    if gameBoard.lastEnteredIndex().1 == 4 && gameBoard.hasValidWord {
         
         for (guessIndex, element) in newBoard.board[newBoard.currentGuess].enumerated() {
             var shouldContinue = false
