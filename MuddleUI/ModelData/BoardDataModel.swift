@@ -107,7 +107,14 @@ struct GameBoard {
     
     
     func selectWordOfDay() -> String {
-        let myWordIndex = Int(Date.timeIntervalSinceReferenceDate / (60 * 60 * 24)) % 2309
+        let currentCalendar = Calendar.current
+        
+        let referenceDate = currentCalendar.startOfDay(for: Date(timeIntervalSince1970: 0))
+        let currentDate = currentCalendar.startOfDay(for: Date())
+        
+        let diffDays = currentCalendar.dateComponents([.day], from: referenceDate, to: currentDate).day ?? 0
+        
+        let myWordIndex = diffDays % 2309
         
         print(GuessableWords[myWordIndex])
         return GuessableWords[myWordIndex]
