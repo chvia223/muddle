@@ -119,6 +119,39 @@ struct GameBoard {
         print(GuessableWords[myWordIndex])
         return GuessableWords[myWordIndex]
     }
+    
+    
+    
+    func colorForLetter(letter: String) -> Color {
+        let flattenedBoard = board.reduce([], +)
+        var colorDictionary:[String: LetterState] = [:]
+        
+        flattenedBoard.forEach({ element in
+            guard element.letter != "" else { return }
+            guard let state = colorDictionary[element.letter] else {
+                colorDictionary[element.letter] = element.state
+                return
+            }
+            
+            if element.state.rawValue > state.rawValue {
+                colorDictionary[element.letter] = element.state
+            }
+        })
+
+        return colorDictionary[letter]?.color ?? .gray
+    }
+    
+    
+    
+    ///  Returns a Bool.
+
+    ///  Receives a GameBoard struct as a parameter. This function will parse through each stored
+    ///  letter in the current guess and check that it's state is the right letter in the right place. If each
+    ///  of the five letters holds that state then True will be returned. Otherwise False will be returned.
+    func compareGuessToSolution() -> Bool {
+        return board[currentGuess].allSatisfy { $0.state == .rightLetterRightPlace}
+    }
+    
 }
 
 
@@ -148,7 +181,7 @@ func parseSolution(word: String) -> [String] {
 /// - wrongLetterWrongPlace -> reads like a sentence, but when the letter isn't in the solution at all
 /// - rightLetterWrongPlace -> again, reads like a sentence, but when the letter is in the solution, but not the right spot
 /// - rightLetterRightPlace -> I'm not going to explain this one.
-enum LetterState: Codable {
+enum LetterState: Int, Codable {
     case unknown
     case unconfirmedGuess
     case wrongLetterWrongPlace
