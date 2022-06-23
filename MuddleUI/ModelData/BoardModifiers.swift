@@ -53,24 +53,6 @@ func deleteLetterFromGuess(gameBoard: GameBoard) -> GameBoard {
 
 
 
-///  Returns a Bool.
-
-///  Receives a GameBoard struct as a parameter. This function will iterate through each stored
-///  letter in the current guess and check that it's state is the right letter in the right place. If each
-///  of the five letters holds that state then True will be returned. Otherwise False will be returned.
-func compareCommitToWinWord(gameBoard: GameBoard) -> Bool {
-    
-    for letter in gameBoard.board[gameBoard.currentGuess] {
-        if letter.state != .rightLetterRightPlace {
-            return false
-        }
-    }
-    
-    return true
-}
-
-
-
 ///  Returns a new GameBoard struct if the original has been modified. Otherwise the original
 ///  will be returned.
 
