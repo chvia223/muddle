@@ -42,10 +42,10 @@ struct KeyboardView: View {
     // Designed to find the correct sizing of each key using the available
     // geometry of the device.
     func keySize(_ keyboardWidth: CGFloat, content: String = "") -> CGFloat {
-        let baseKeyWidth = (keyboardWidth - (CGFloat((row1.count - 1) * 10))) / CGFloat(row1.count)
+        let baseKeyWidth = (keyboardWidth - (CGFloat((row1.count - 2) * 10))) / CGFloat(row1.count)
         
         if (content == EnterString || content == DeleteString) {
-            return (keyboardWidth - 80.0 - (baseKeyWidth * 7)) / 2
+            return (keyboardWidth - 72.0 - (baseKeyWidth * 7)) / 2
             
         } else {
             
