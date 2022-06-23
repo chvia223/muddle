@@ -31,7 +31,7 @@ struct ContentView: View {
                 
                 Text(gameBoard.winMessage)
                 
-                KeyboardView() { key in
+                KeyboardView(board: gameBoard) { key in
                     switch (key) {
                     case .enter:
                         gameBoard = commitGuess(gameBoard: gameBoard)
