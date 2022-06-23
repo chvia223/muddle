@@ -41,6 +41,10 @@ func addLetterToGuess(gameBoard: GameBoard, newLetter: String) -> GameBoard {
 ///  has one.
 func deleteLetterFromGuess(gameBoard: GameBoard) -> GameBoard {
     
+    if gameBoard.compareGuessToSolution() {
+        return gameBoard
+    }
+    
     let availableIndex = gameBoard.lastEnteredIndex()
     
     var newBoard = gameBoard
