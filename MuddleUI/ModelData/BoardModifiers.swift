@@ -84,62 +84,53 @@ func compareCommitToWinWord(gameBoard: GameBoard) -> Bool {
 ///
 ///  (Commentary)
 ///
-///  Honestly, the yuckiest part of all of this code is making sure extra of the same letter don't
-///  get colored. That way the player knows how many of each lettter there are in the correct
-///  word. We just replaced the character with an empty string when we found it so it wouldn't
-///  be compared against again for this comparison call.
+///  So the last implementation of this code was actually wrong and didn't work right. And on top
+///  of all of that it was inefficient for what it was. I can't believe I thought a nested for loop was
+///  completely necessary. Though that might be what's happening during that .contains call in the
+///  second for loop. Either way, this works much better now and is much less ugly. Like waaaaay
+///  less ugly. Thank guard!
 func commitGuess(gameBoard: GameBoard) -> GameBoard {
+    
+    guard gameBoard.lastEnteredIndex().1 == 4 && gameBoard.hasValidWord else {
+        return gameBoard
+    }
+    
     
     var newBoard = gameBoard
     var solution = newBoard.solution
     let line = newBoard.currentGuess
     
-    if gameBoard.lastEnteredIndex().1 == 4 && gameBoard.hasValidWord {
-        
-        for (guessIndex, element) in newBoard.board[newBoard.currentGuess].enumerated() {
-            var shouldContinue = false
-            
-            if solution[guessIndex] == element.letter.lowercased() {
-                newBoard.board[line][guessIndex].state = .rightLetterRightPlace
-                solution[guessIndex] = ""
-                continue
-            }
-            
-            for (solutionIndex, solutionLetter) in solution.enumerated()
-            where solutionLetter == element.letter.lowercased() && element.state == .unconfirmedGuess {
-                newBoard.board[line][guessIndex].state = .rightLetterWrongPlace
-                solution[solutionIndex] = ""
-                shouldContinue = true
-                break
-            }
-            
-            if (shouldContinue) {
-                continue
-            }
-            
-            if element.state == .unconfirmedGuess {
-                newBoard.board[line][guessIndex].state = .wrongLetterWrongPlace
-            }
-        }
-
-        if compareCommitToWinWord(gameBoard: newBoard) {
-            newBoard.winMessage = "You won!"
-            
-            return newBoard
-            
-        } else {
-            if gameBoard.currentGuess < 5 {
-                newBoard.currentGuess += 1
-            }
-            
-            if gameBoard.currentGuess == 5 {
-                newBoard.winMessage = "You lose 😔"
-            }
-        
-            return newBoard
-        }
-        
-    } else {
-        return gameBoard
+    
+    for (guessIndex, element) in newBoard.board[line].enumerated()
+    where element.letter.lowercased() == solution[guessIndex] {
+        newBoard.board[line][guessIndex].state = .rightLetterRightPlace
+        solution[guessIndex] = ""
     }
+    
+    for (guessIndex, element) in newBoard.board[line].enumerated()
+    where solution.contains(element.letter.lowercased()) {
+        newBoard.board[line][guessIndex].state = .rightLetterWrongPlace
+        solution[guessIndex] = ""
+    }
+    
+    for (guessIndex, element) in newBoard.board[line].enumerated()
+    where element.state == .unconfirmedGuess {
+        newBoard.board[line][guessIndex].state = .wrongLetterWrongPlace
+    }
+    
+    
+    // Temp code anyways. In the future there'll either be an alert
+    // or sheet that displays the end condition message. For now this
+    // text will have to do.
+    if newBoard.compareGuessToSolution() {
+        newBoard.winMessage = "You won!"
+    } else {
+        if gameBoard.currentGuess == 5 {
+            newBoard.winMessage = "You lose 😔"
+        } else {
+            newBoard.currentGuess += 1
+        }
+    }
+    
+    return newBoard
 }
