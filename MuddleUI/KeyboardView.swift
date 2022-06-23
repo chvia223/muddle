@@ -23,6 +23,7 @@ enum KeyboardKey {
 
 
 struct KeyboardView: View {
+    let board: GameBoard
     let onKeyPressed: (KeyboardKey) -> Void
     
     func keyPressed(_ content: String) {
@@ -59,7 +60,7 @@ struct KeyboardView: View {
             VStack {
                 HStack {
                     ForEach(row1.indices, id: \.self) { i in
-                        KeyView(content: row1[i]) { content in
+                        KeyView(content: row1[i], color: board.colorForLetter(letter: row1[i])) { content in
                             keyPressed(content)
                         }
                         .frame(width: keySize(keyboardBox.size.width))
@@ -68,7 +69,7 @@ struct KeyboardView: View {
                 
                 HStack {
                     ForEach(row2.indices, id: \.self) { i in
-                        KeyView(content: row2[i]) { content in
+                        KeyView(content: row2[i], color: board.colorForLetter(letter: row2[i])) { content in
                             keyPressed(content)
                         }
                         .frame(width: keySize(keyboardBox.size.width))
@@ -77,7 +78,7 @@ struct KeyboardView: View {
                 
                 HStack {
                     ForEach(row3.indices, id: \.self) { i in
-                        KeyView(content: row3[i]) { content in
+                        KeyView(content: row3[i], color: board.colorForLetter(letter: row3[i])) { content in
                             keyPressed(content)
                         }
                         .frame(width: keySize(keyboardBox.size.width, content: row3[i]))
@@ -92,6 +93,7 @@ struct KeyboardView: View {
 // View for individual key
 struct KeyView: View {
     let content: String
+    let color: Color
     let action: (String) -> ()
     
     var body: some View {
@@ -119,7 +121,7 @@ struct KeyView: View {
                             .font(.system(size: 25))
                             .minimumScaleFactor(0.01)
                     }
-                    .foregroundColor(.gray)
+                    .foregroundColor(color)
                     .cornerRadius(5)
                     .padding(-1)
             }
@@ -129,7 +131,9 @@ struct KeyView: View {
 
 
 struct KeyboardView_Previews: PreviewProvider {
+    static var gameBoard = GameBoard()
+    
     static var previews: some View {
-        KeyboardView() { _ in }
+        KeyboardView(board: gameBoard) { _ in }
     }
 }
