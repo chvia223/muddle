@@ -93,10 +93,12 @@ func commitGuess(gameBoard: GameBoard) -> GameBoard {
         solution[guessIndex] = ""
     }
     
-    for (guessIndex, element) in newBoard.board[line].enumerated()
-    where solution.contains(element.letter.lowercased()) {
+    for (guessIndex, element) in newBoard.board[line].enumerated() {
+        guard let firstElementIndex = solution.firstIndex(of: element.letter.lowercased()) else {
+            continue
+        }
         newBoard.board[line][guessIndex].state = .rightLetterWrongPlace
-        solution[guessIndex] = ""
+        solution[firstElementIndex] = ""
     }
     
     for (guessIndex, element) in newBoard.board[line].enumerated()
