@@ -97,8 +97,10 @@ func commitGuess(gameBoard: GameBoard) -> GameBoard {
         guard let firstElementIndex = solution.firstIndex(of: element.letter.lowercased()) else {
             continue
         }
-        newBoard.board[line][guessIndex].state = .rightLetterWrongPlace
-        solution[firstElementIndex] = ""
+        if newBoard.board[line][guessIndex].state == .unconfirmedGuess {
+            newBoard.board[line][guessIndex].state = .rightLetterWrongPlace
+            solution[firstElementIndex] = ""
+        }
     }
     
     for (guessIndex, element) in newBoard.board[line].enumerated()
